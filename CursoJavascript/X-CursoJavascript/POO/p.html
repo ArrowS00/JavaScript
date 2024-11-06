@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script id="map" type="text/x-game-map">
+        11111111111111
+        12000011100001
+        11010101110103
+        10010101000111
+        11000000101011
+        11101010000001
+        11111111111111
+        </script>
+
+    <style>
+        .map{
+            display: grid;
+            grid-template-columns: repeat(14, 50px);
+            grid-auto-rows: 50px;
+
+            .wall{
+                background: darkred;
+            }
+            .floor{
+                background: grey;
+            }
+            .me{
+                background: deeppink;
+            }   
+            .exit{
+                background: lime;
+            }
+        }
+    </style>
+    
+    <script>
+        // Genera la celda
+const cellHTML = type => `<div class="cell ${type}"></div>`;
+const CELLTYPE = ["floor", "wall", "me", "exit"].map(cellHTML);
+
+// Genera el mapa
+const mapData = document.querySelector("#map").text.trim();
+const mapHTML = mapData.replace(/[0-9]/g, cell => CELLTYPE[cell] || "");
+document.body.insertAdjacentHTML("beforeend", `<div class="map">${mapHTML}</div>`);
+
+// Direcciones posibles para moverse
+const OFFSETS = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: 14, ArrowUp: -14 };
+
+// Mueve el jugador por la cuadricula
+const moveTo = (me, direction) => {
+  const offset = OFFSETS[direction];
+  const map = me.parentElement.children;
+  const target = map[[...map].indexOf(me) + offset];
+  if (target?.classList.contains("exit")) { alert("¡Ganaste!"); }
+  if (target?.classList.contains("floor")) {
+    me.classList.replace("me", "floor");
+    target?.classList.replace("floor", "me");
+  }
+}
+
+// Gestiona los cursores
+addEventListener("keydown", (ev) => {
+  const player = document.querySelector(".me");
+  if (Object.keys(OFFSETS).includes(ev.key)) {
+    moveTo(player, ev.key);
+    ev.preventDefault();
+  }
+});
+    </script>
+</body>
+</html>

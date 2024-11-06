@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 2em;">
+
+    <script type="text/javascript">
+
+        let coche={color:"rojo",potencia:400};
+        let furgoneta={capacidad:"grande",autonomía:"extendida"};
+
+        //spread operator ES2018
+        let suv={...coche,...furgoneta};
+
+        console.log(suv);
+
+
+
+
+        /* const EJEMPLONOMBRE="color";
+
+        function nombrePropiedad(){
+            return "potencia"+"_coche";
+        }
+
+        /* let coche={};
+
+        coche [EJEMPLONOMBRE]="verde";
+
+        coche [nombrePropiedad()]=400;
+
+        console.log(coche); */
+
+       /*  let coche={
+            [EJEMPLONOMBRE]:"verde",
+            [nombrePropiedad()]:400
+        };
+
+        console.log(coche); */
+ 
+        
+        /*let fecha=new Date(2024,11,6);
+
+        //document.write(fecha.valueOf());
+        //document.write("<br>");
+        //document.write(fecha.toLocaleString());
+
+        let curso=new String("Curso de JavaScript");
+        console.log(curso);
+        console.log(curso.valueOf());
+       
+
+
+        /*let empleado={
+            salario:40000000, 
+            comision:1000000,
+            toLocaleString:function(){
+                return "El salario del empleado es "+this.salario.toLocaleString()+
+                " y la comisión es "+this.comision.toLocaleString();
+            }
+        }
+
+        document.write(empleado.toLocaleString());*/
+        
+        
+
+    
+        
+
+    </script>
+    
+</body>
+</html>

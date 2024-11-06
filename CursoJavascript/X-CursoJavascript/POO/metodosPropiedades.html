@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 2em;">
+
+    <script type="text/javascript">
+
+        let persona={
+            nombre:"Carlos",
+            apellido:"Martínez",
+
+            get dameNombre(){
+                return this.nombre+" "+this.apellido;
+            },
+
+            set dameNombre(nuevoNombre){
+                [this.nombre,this.apellido]=nuevoNombre.split(" ");
+            }
+
+
+        }
+
+        persona.dameNombre="Juan Pérez";
+        document.write(persona.dameNombre);
+
+
+
+        /* let triangulo={
+            base:12,
+            altura:15,
+             area:function(){
+                return (this.base*this.altura)/2;
+            } 
+
+            get area(){
+                return (this.base*this.altura)/2;
+            },
+
+            set area(nuevaBase){
+                this.base=nuevaBase;
+            }
+
+        
+        };
+
+        triangulo.area=100;
+
+    document.write(triangulo.area); */
+
+
+
+        
+        
+
+    
+        
+
+    </script>
+    
+</body>
+</html>
