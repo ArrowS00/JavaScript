@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 2em;">
+
+    <script type="text/javascript">
+
+    let numeros= new Array();  //lo mismo que let numeros= [];
+
+    let nombres= new Array(5); //esopefica el tamaño del array, cantidad de elementos;\
+
+    let paises= new Array("España", "Colombia", "México");
+
+    paises[3]="Filipinas";
+    //paises.push("Perú");
+    //paises.push("Argentina, Chile, Rumania");//al final
+    paises.unshift("Venezuela", "Chile");//al principio
+
+    //eliminar elementos al final
+    paises.pop();
+    //eliminar elementos al principio
+    //paises.shift();
+    delete paises[2]; //delete borra pero cuenta el elemeto, como posicion vacia con shift mo lo cuenta (null)
+
+    document.write(paises);
+
+    document.write(paises.length);
+    
+    </script>
+    
+</body>
+</html>

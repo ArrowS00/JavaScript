@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 2em;">
+
+    <script type="text/javascript">
+
+    let numeros= new Array();  //lo mismo que let numeros= [];
+
+    let nombres= new Array(5); //esopefica el tamaño del array, cantidad de elementos;\
+
+    let paises= new Array("España", "Colombia", "México");
+
+    //console.log(numeros);
+    //console.log(nombres);
+    //console.log(paises);
+
+    //let mi_numero= new Array(15);
+    /*et mi_numero=Array.of(15);
+    let palabra="Sombrilla";
+    
+    let nuevo_array=Array.from(palabra);
+
+    document.write(nuevo_array);
+    console.log(nuevo_array);
+
+    //console.log(mi_numero);*/
+
+    function suma_numeros(valor){
+        return valor*2;
+    }
+
+    let array_numeros=new Array(5,10,15,20,25);
+
+    let nuevo_array_numeros=Array.from(array_numeros,suma_numeros);
+
+    document.write(nuevo_array_numeros);  // crea un array mopdificandolos con una función
+      
+
+    </script>
+    
+</body>
+</html>
